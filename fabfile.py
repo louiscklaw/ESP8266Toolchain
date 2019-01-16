@@ -8,7 +8,7 @@ from fabric.colors import *
 from fabric.context_managers import *
 from fabric.contrib.project import *
 
-
+@task
 def buildAndDownload():
     local('make clean; make; make ESPPORT=/dev/ttyUSB0 flash')
 

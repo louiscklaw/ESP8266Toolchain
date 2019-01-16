@@ -1,0 +1,9 @@
+[submodule "_ref/ESP8266"]
+	path = _ref/ESP8266
+	url = https://github.com/OLIMEX/ESP8266
+[submodule "_ref/esp8266-nonos-sample-code"]
+	path = _ref/esp8266-nonos-sample-code
+	url = git@github.com:espressif/esp8266-nonos-sample-code.git
+[submodule "_schematic/nodemcu-devkit"]
+	path = _schematic/nodemcu-devkit
+	url = https://github.com/nodemcu/nodemcu-devkit
