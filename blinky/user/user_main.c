@@ -1,3 +1,4 @@
+//
 #include "ets_sys.h"
 #include "osapi.h"
 #include "gpio.h"
@@ -41,7 +42,6 @@ user_init()
 {
     // Initialize the GPIO subsystem.
     gpio_init();
-
     uart_div_modify(0, UART_CLK_FREQ / 115200);
 
     //Set GPIO2 to output mode
