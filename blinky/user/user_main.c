@@ -15,6 +15,7 @@ static volatile os_timer_t some_timer;
 void some_timerfunc(void *arg)
 {
     //Do blinky stuff
+    os_printf("Hello\n\r");
     if (GPIO_REG_READ(GPIO_OUT_ADDRESS) & BIT2)
     {
         //Set GPIO2 to LOW
@@ -41,6 +42,8 @@ user_init()
     // Initialize the GPIO subsystem.
     gpio_init();
 
+    uart_div_modify(0, UART_CLK_FREQ / 115200);
+
     //Set GPIO2 to output mode
     // PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);
 
@@ -58,9 +61,9 @@ user_init()
     //&some_timer is the pointer
     //1000 is the fire time in ms
     //0 for once and 1 for repeating
-    os_timer_arm(&some_timer, 50, 1);
+    os_timer_arm(&some_timer, 1000, 1);
 
     //Start os task
     system_os_task(user_procTask, user_procTaskPrio,user_procTaskQueue, user_procTaskQueueLen);
-    os_printf("Hello\n\r");
+
 }
